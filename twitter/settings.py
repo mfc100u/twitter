@@ -41,6 +41,9 @@ INSTALLED_APPS = [
 
     'rest_framework',
     'debug_toolbar',
+
+    # project apps
+    'accounts',
 ]
 
 REST_FRAMEWORK = {
