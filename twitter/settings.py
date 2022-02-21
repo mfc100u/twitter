@@ -26,7 +26,7 @@ SECRET_KEY = '7w1u80b0bfe7k!xdg_9-!^(i_+a6ks(2&ux^r11(z!a%06*gt-'
 DEBUG = True
 
 ALLOWED_HOSTS = ['127.0.0.1', '192.168.33.10', 'localhost']
-INTERNAL_IPS = ['127.0.0.1', '192.168.33.10', 'localhost']
+INTERNAL_IPS = ['10.0.2.2']
 
 
 # Application definition
@@ -52,6 +52,7 @@ REST_FRAMEWORK = {
 }
 
 MIDDLEWARE = [
+    'debug_toolbar.middleware.DebugToolbarMiddleware',
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
