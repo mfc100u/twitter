@@ -43,7 +43,6 @@ INSTALLED_APPS = [
     'debug_toolbar',
 
     'accounts',
-    'debug_toolbar',
 ]
 
 REST_FRAMEWORK = {
