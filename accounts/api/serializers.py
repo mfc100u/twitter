@@ -12,6 +12,13 @@ class LoginSerializer(serializers.Serializer):
     username = serializers.CharField()
     password = serializers.CharField()
 
+    def validate(self, attrs):
+        username = attrs['username'].lower()
+        if not User.objects.filter(username=username).exists():
+            raise exceptions.ValidationError({'username': 'User does not exists.'})
+        attrs['username'] = username
+        return attrs
+
 class SignupSerializer(serializers.ModelSerializer):
     username = serializers.CharField(max_length=20, min_length=6)
     password = serializers.CharField(max_length=20, min_length=6)
