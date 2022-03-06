@@ -6,7 +6,13 @@ class UserSerializer(serializers.HyperlinkedModelSerializer):
 # 同时验证用户的输入，serializer的功能: 1. 序列化 2. 验证用户的输入
     class Meta:
         model = User
-        fields = ('username', 'email')
+        fields = ('username', 'email', 'id')
+
+class UserSerializerForTweets(serializers.HyperlinkedModelSerializer):
+# 同时验证用户的输入，serializer的功能: 1. 序列化 2. 验证用户的输入
+    class Meta:
+        model = User
+        fields = ('id', 'username')
 
 class LoginSerializer(serializers.Serializer):
     username = serializers.CharField()
