@@ -20,3 +20,9 @@ class NewsFeedService(object):
         ]
         newsfeeds.append(NewsFeed(user=tweet.user, tweet=tweet))
         NewsFeed.objects.bulk_create(newsfeeds)
+
+        # 这整个API的调用都是在tweet 模块中create api 中调用的
+
+        # 整体的流程是 某人发了一条推特，获取这个用户所有的follower (从FriendshipService模块中)
+        # 然后在 NewsFeed 模块中 添加 N 条记录，每个记录就是 每个follower收到消息
+
